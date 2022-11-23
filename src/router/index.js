@@ -11,6 +11,16 @@ const routes = [
 
     },
     {
+        path: '/test',
+        name: 'test',
+        component: () => import('../views/test/index'),
+    },
+    {
+        path: '/test/create',
+        name: 'test-create',
+        component: () => import('../views/test/create'),
+    },
+    {
         path: '/create',
         name: 'employeeCreate',
         component: () => import('../components/task3/employee/create'),
