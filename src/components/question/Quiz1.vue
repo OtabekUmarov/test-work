@@ -72,6 +72,7 @@ export default {
           this.error_message = "1 ta to'g'ri javob bo'lishi kerak"
         } else {
           this.createItemTest1({form: this.form})
+          this.$router.push('/test')
         }
     }
   }

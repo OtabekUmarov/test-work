@@ -4,12 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
 const routes = [
-    {
-        path: '/',
-        name: 'employee',
-        component: () => import('../components/task3/employee'),
 
-    },
     {
         path: '/test',
         name: 'test',
@@ -21,15 +16,25 @@ const routes = [
         component: () => import('../views/test/create'),
     },
     {
-        path: '/create',
-        name: 'employeeCreate',
-        component: () => import('../components/task3/employee/create'),
+        path: '/exam',
+        name: 'exam',
+        component: () => import('../views/exam/index'),
     },
     {
-        path: '/update',
-        name: 'employeeUpdate',
-        component: () => import('../components/task3/employee/update'),
+        path: '/students',
+        name: 'students',
+        component: () => import('../views/students/index'),
     },
+    {
+        path: '/auth',
+        name: 'auth',
+        component: () => import('../views/auth/index')
+    },
+    {
+        path: '/validations',
+        name: 'validations',
+        component: () => import('../views/validations/index')
+    }
 ]
 const router = new VueRouter({
     routes,

@@ -39,6 +39,7 @@ export default {
         } else {
           this.error_message = ""
           this.createItemWriting({form: this.form})
+          this.$router.push('/test')
         }
     }
   }

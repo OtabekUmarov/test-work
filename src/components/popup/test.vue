@@ -6,13 +6,13 @@
     </div>
     <div class="popup-body">
       <button class="btn" @click='clicked(1)'>
-        task-3
+        Bitta javobli savol
       </button>
       <button class="btn" @click='clicked(2)'>
-        task-3
+        Ikkita javobli savol
       </button>
       <button class="btn" @click='clicked(3)'>
-        task-3
+        Yozma savol
       </button>
     </div>
     </div>

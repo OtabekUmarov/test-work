@@ -8,13 +8,13 @@
     <div class="task1-sidebar">
       <ul>
         <li :class="{ active: isActive == 1 }" @click="isActive = 1">
-          Single checkbox quiz
+          Bitta javobli savol
         </li>
         <li :class="{ active: isActive == 2 }" @click="isActive = 2">
-          Multiple checkbox quiz
+          Ikkita javobli savol
         </li>
         <li :class="{ active: isActive == 3 }" @click="isActive = 3">
-          Text quiz
+          Yozma savol
         </li>
       </ul>
     </div>

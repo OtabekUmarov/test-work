@@ -1,51 +1,140 @@
 {
   "test": [
     {
-      "question": "asdads",
+      "question": "O'zbekiston poytaxti?",
       "type": 1,
-      "id": 1
+      "id": 4
     },
     {
-      "question": "asdasd",
+      "question": "Mustaqillik qachon e'lon qilingan?",
+      "type": 1,
+      "id": 5
+    },
+    {
+      "question": "Ikkita javob togri (a va b)",
       "type": 2,
-      "id": 2
+      "id": 6
     },
     {
-      "question": "asdasd asd ",
+      "question": "45 va 98 javob togri",
+      "type": 2,
+      "id": 7
+    },
+    {
+      "question": "yozma javob yozing",
       "type": 3,
-      "id": 3
+      "id": 8
+    },
+    {
+      "question": "yozma 2",
+      "type": 3,
+      "id": 9
     }
   ],
   "answers": [
     {
-      "question_id": 1,
-      "answer": "asdasd",
+      "question_id": 4,
+      "answer": "Toshkent",
+      "is_correct": true,
+      "id": 6
+    },
+    {
+      "question_id": 4,
+      "answer": "Samarqand",
       "is_correct": false,
+      "id": 7
+    },
+    {
+      "question_id": 4,
+      "answer": "Jizzax",
+      "is_correct": false,
+      "id": 8
+    },
+    {
+      "question_id": 4,
+      "answer": "Navoiy",
+      "is_correct": false,
+      "id": 9
+    },
+    {
+      "question_id": 5,
+      "answer": "1990",
+      "is_correct": false,
+      "id": 10
+    },
+    {
+      "question_id": 5,
+      "answer": "1991",
+      "is_correct": true,
+      "id": 11
+    },
+    {
+      "question_id": 5,
+      "answer": "1992",
+      "is_correct": false,
+      "id": 12
+    },
+    {
+      "question_id": 6,
+      "answer": "a",
+      "is_correct": true,
+      "id": 13
+    },
+    {
+      "question_id": 6,
+      "answer": "b",
+      "is_correct": true,
+      "id": 14
+    },
+    {
+      "question_id": 6,
+      "answer": "c",
+      "is_correct": false,
+      "id": 15
+    },
+    {
+      "question_id": 6,
+      "answer": "d",
+      "is_correct": false,
+      "id": 16
+    },
+    {
+      "question_id": 7,
+      "answer": "45",
+      "is_correct": true,
+      "id": 18
+    },
+    {
+      "question_id": 7,
+      "answer": "234",
+      "is_correct": false,
+      "id": 19
+    },
+    {
+      "question_id": 7,
+      "answer": "dfg",
+      "is_correct": false,
+      "id": 20
+    },
+    {
+      "question_id": 7,
+      "answer": "98",
+      "is_correct": true,
+      "id": 21
+    }
+  ],
+  "students": [
+    {
+      "name": "Umarov Otabek",
+      "phone": "998998266113",
+      "course": 2,
       "id": 1
     },
     {
-      "question_id": 1,
-      "answer": "asdasd",
-      "is_correct": true,
+      "name": "test",
+      "phone": "999595854145",
+      "course": 3,
       "id": 2
-    },
-    {
-      "question_id": 2,
-      "answer": "asd",
-      "is_correct": false,
-      "id": 3
-    },
-    {
-      "question_id": 2,
-      "answer": "asdasd",
-      "is_correct": true,
-      "id": 4
-    },
-    {
-      "question_id": 2,
-      "answer": "asdsad",
-      "is_correct": true,
-      "id": 5
     }
   ]
 }

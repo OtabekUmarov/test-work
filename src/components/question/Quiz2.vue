@@ -13,7 +13,7 @@
         <div class="form-group" v-for="(item,index) in form.answers" :key="index">
             <div class='answer'>
                 <span @click="isCorrectAnswer(index)" :class="{active: item.is_correct}">{{index + 1}}</span>
-                <input type="text" v-model="item.answer" >
+                <input type="text" v-model="item.answer" placeholder="Kiriting">
                 <button v-if="index > 1" @click="removeAnswer(index)" class="answer-remove">X</button>
             </div>
         </div>
@@ -61,7 +61,7 @@ export default {
       this.form.answers.splice(index,1)
     },  
     isCorrectAnswer(index) {
-      this.form.answers[index].is_correct = true
+      this.form.answers[index].is_correct = !this.form.answers[index].is_correct
     },
     send(){
       let count = 0
@@ -72,6 +72,7 @@ export default {
           this.error_message = "2 ta to'g'ri javob bo'lishi kerak"
         } else {
           this.createItemTest2({form: this.form})
+          this.$router.push('/test')
         }
     }
   }

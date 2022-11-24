@@ -20,15 +20,23 @@ export const actions = {
         commit('setState', {key: 'list', payload: res.data})
         return res
     },
-    async fetchListType1({commit}){
-        let res = await axios.get('http://localhost:3000/test?type=1')
-        if(res.status == 200) {
+    async fetchListType({commit}, {type}){
+        let res = await axios.get(`http://localhost:3000/test?type=${type}`)
+        if(res.status == 200 && type != 3) {
             res.data.forEach(async el =>{
                 let answers = await axios.get(`http://localhost:3000/answers?question_id=${el.id}`)
-                el.answers = answers.data
+                let shuffleAnswer = shuffle(answers.data)
+                el.answers = shuffleAnswer
                 el.correct = null
             })
+        } else if(res.status == 200 && type == 3) {
+            res.data.forEach(async el =>{
+                el.correct = ''
+            })
         }
+        res.data.status = true
+        let shuffleArray  = shuffle(res.data)
+        res.data = shuffleArray
         commit('setState', {key: 'tests', payload: res.data})
         return res
     },
@@ -48,6 +56,10 @@ export const actions = {
             })
         });
         return count
+    },
+    async checkFinishedWriting(_,{form}){
+        console.log(form)
+        return 'Javoblaringiz yuborildi!!!'
     },
     async createItemTest1(_, {form}){
         let question = {
@@ -90,5 +102,24 @@ export const actions = {
         }
         let res = await axios.post('http://localhost:3000/test', question)
         console.log(res)
-    }
+    },
+    async delete(_, id){
+        let res = await axios.delete('http://localhost:3000/test/' + id)
+        let answers = await axios.get(`http://localhost:3000/answers?question_id=${id}`)
+        answers.data.forEach(el => {
+            axios.delete('http://localhost:3000/answers/' + el.id)
+        });
+        return res
+    },
 }
+
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
