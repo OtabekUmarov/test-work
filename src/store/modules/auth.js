@@ -15,13 +15,13 @@ export const mutations = {
 
 export const actions = {
     async login(_, {form}){
-        let res = await axios.post('http://localhost:3000/auth', form)
+        let res = await axios.post('http://localhost:3003/auth', form)
         // harakat muvaffaqiyatli bo'lib token olgandan leyin uni parse qilib role ni bilib olamiz
         // token va rolni localstorage va kerak bolsa storeda saqlaymiz
         return res
     },
     logout(){
-        let res = axios.post('http://localhost:3000/logout')
+        let res = axios.post('http://localhost:3003/logout')
         // localstorage va store malumotlarni tozalab yuboramiz
         return res
     },

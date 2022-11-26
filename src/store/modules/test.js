@@ -16,15 +16,15 @@ export const mutations = {
 
 export const actions = {
     async fetchList({commit}){
-        let res = await axios.get('http://localhost:3000/test')
+        let res = await axios.get('http://localhost:3003/test')
         commit('setState', {key: 'list', payload: res.data})
         return res
     },
     async fetchListType({commit}, {type}){
-        let res = await axios.get(`http://localhost:3000/test?type=${type}`)
+        let res = await axios.get(`http://localhost:3003/test?type=${type}`)
         if(res.status == 200 && type != 3) {
             res.data.forEach(async el =>{
-                let answers = await axios.get(`http://localhost:3000/answers?question_id=${el.id}`)
+                let answers = await axios.get(`http://localhost:3003/answers?question_id=${el.id}`)
                 let shuffleAnswer = shuffle(answers.data)
                 el.answers = shuffleAnswer
                 el.correct = null
@@ -66,7 +66,7 @@ export const actions = {
             question: form.question,
             type: 1
         }
-        let res = await axios.post('http://localhost:3000/test', question)
+        let res = await axios.post('http://localhost:3003/test', question)
         if (res.status == 201) {
             form.answers.forEach(async item => {
                 let answer = {
@@ -74,7 +74,7 @@ export const actions = {
                     answer: item.answer,
                     is_correct: item.is_correct
                 }
-                await axios.post('http://localhost:3000/answers', answer)
+                await axios.post('http://localhost:3003/answers', answer)
             });
         }
     },
@@ -83,7 +83,7 @@ export const actions = {
             question: form.question,
             type: 2
         }
-        let res = await axios.post('http://localhost:3000/test', question)
+        let res = await axios.post('http://localhost:3003/test', question)
         if (res.status == 201) {
             form.answers.forEach(async item => {
                 let answer = {
@@ -91,7 +91,7 @@ export const actions = {
                     answer: item.answer,
                     is_correct: item.is_correct
                 }
-                await axios.post('http://localhost:3000/answers', answer)
+                await axios.post('http://localhost:3003/answers', answer)
             });
         }
     },
@@ -100,14 +100,14 @@ export const actions = {
             question: form.question,
             type: 3
         }
-        let res = await axios.post('http://localhost:3000/test', question)
+        let res = await axios.post('http://localhost:3003/test', question)
         console.log(res)
     },
     async delete(_, id){
-        let res = await axios.delete('http://localhost:3000/test/' + id)
-        let answers = await axios.get(`http://localhost:3000/answers?question_id=${id}`)
+        let res = await axios.delete('http://localhost:3003/test/' + id)
+        let answers = await axios.get(`http://localhost:3003/answers?question_id=${id}`)
         answers.data.forEach(el => {
-            axios.delete('http://localhost:3000/answers/' + el.id)
+            axios.delete('http://localhost:3003/answers/' + el.id)
         });
         return res
     },

@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run serve\" \"npm run server\" \"npm run build\"",
+    "dev": "concurrently \"npm run serve\" \"npm run server\"",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "server": "json-server --watch db.json"
+    "server": "json-server --watch db.json --port 3003"
   },
   "dependencies": {
     "axios": "^1.1.3",
